@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f2942">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="NEW Weaving It Together 3 (ม.6) - เว็บแอปพลิเคชันพัฒนาทักษะการอ่านและการเขียนภาษาอังกฤษ สำนักพิมพ์ไทยวัฒนาพานิช">
+  
+  <title>NEW Weaving It Together 3 - สำนักพิมพ์ไทยวัฒนาพานิช (ม.6)</title>
+
+  <!-- Google Fonts: Prompt & Sarabun -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Sarabun:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Favicon & Stylesheet -->
+  <link rel="icon" type="image/png" href="assets/images/twp_logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP NAVIGATION BAR
+       ============================================================ -->
+  <header class="app-navbar">
+    <div class="nav-brand" title="กลับหน้าแรก">
+      <img src="assets/images/twp_logo.png" alt="TWP" class="nav-logo-twp" onerror="this.outerHTML='<span style=\'font-weight:900; color:#fbbf24; font-size:1.3rem; letter-spacing:1px;\'>TWP</span>';">
+      <div class="nav-titles">
+        <div class="nav-title-main">
+          <span data-i18n="nav_title">NEW Weaving It Together 3</span>
+          <span class="badge-level">CEF: B1/B2</span>
+        </div>
+        <div class="nav-subtitle" data-i18n="nav_subtitle">สำนักพิมพ์ไทยวัฒนาพานิช (ม.6)</div>
+      </div>
+    </div>
+
+    <div class="nav-controls">
+      <button class="btn-nav-link" id="btnNavHome" onclick="App.showLanding()" title="หน้าแรก">
+        <span>🏠</span> <span class="nav-link-text" data-i18n="nav_home">หน้าแรก</span>
+      </button>
+      <button class="btn-nav-link" id="btnNavUnits" onclick="App.showDashboard()" title="บทเรียนทั้งหมด">
+        <span>📚</span> <span class="nav-link-text" data-i18n="nav_units">รวมบทเรียน</span>
+      </button>
+      <button class="btn-lang-toggle" id="btnLangToggle" title="เปลี่ยนภาษา">
+        <span>🌐</span> English
+      </button>
+      <button class="btn-icon" id="btnSystemCheck" title="ตรวจเช็คระบบ">
+        <span>🩺</span>
+      </button>
+      <button class="btn-icon" id="btnSettings" title="ตั้งค่าระบบ">
+        <span>⚙️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN APP VIEWS
+       ============================================================ -->
+  <main class="view-container">
+
+    <!-- ----------------------------------------------------------
+         VIEW 1: DEDICATED LANDING WELCOME PAGE
+         ---------------------------------------------------------- -->
+    <div id="viewLanding" class="app-view active">
+      <!-- Hero Section -->
+      <section class="landing-hero">
+        <div class="hero-content">
+          <div class="hero-text-col">
+            <div class="hero-badge-group">
+              <span class="hero-badge badge-twp">
+                <img src="assets/images/twp_logo.png" style="height:14px;" alt="">
+                <span data-i18n="hero_badge_twp">สำนักพิมพ์ไทยวัฒนาพานิช</span>
+              </span>
+              <span class="hero-badge badge-yellow" data-i18n="hero_badge_series">
+                มัธยมศึกษาปีที่ 6 • CEF: B1/B2
+              </span>
+              
+            </div>
+
+            <h1 class="hero-title" data-i18n="hero_title" style="font-size:2.2rem; line-height:1.35; margin-bottom:14px;">
+              บทอ่านเพื่อเสริมการเรียนรู้<br><span class="highlight-yellow">จากชุด Weaving It Together</span>
+            </h1>
+
+            <p class="hero-subtitle" data-i18n="hero_subtitle" style="font-size:1.2rem; font-weight:500; color:#e0f2fe; margin-bottom:24px; line-height:1.6;">
+              พัฒนาทักษะการอ่านเพื่อความเข้าใจและการจับใจความสำคัญ
+            </p>
+
+            <div class="hero-cta-group">
+              <button class="btn-primary-hero" id="btnHeroEnter" onclick="App.showDashboard()">
+                <span>🚀</span> <span data-i18n="hero_btn_enter">เข้าสู่ระบบเพื่อทำแบบฝึกหัด ➔</span>
+              </button>
+              <button class="btn-secondary-hero" id="btnHeroStart" onclick="App.openExercise(1)">
+                <span>📖</span> <span data-i18n="hero_btn_start">เริ่มเรียนรู้ Unit 1</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Book 3D Showcase Card -->
+          <div class="hero-book-card">
+            <div class="book-card-inner">
+              <img src="assets/images/cover.jpg" alt="NEW Weaving It Together 3 Cover" class="book-cover-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="book-cover-fallback" style="display:none; width:100%; height:320px; background:linear-gradient(135deg, #0f2942 0%, #0369a1 100%); border-radius:12px; color:#fff; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center; box-shadow:0 12px 30px rgba(0,0,0,0.2);"><div style="font-size:2.5rem; margin-bottom:12px;">📖</div><div style="font-size:1.3rem; font-weight:800; color:#fbbf24; line-height:1.3;">NEW Weaving It Together 3</div><div style="font-size:0.95rem; margin-top:8px; opacity:0.9;">มัธยมศึกษาปีที่ 6 • CEF: B1/B2</div><div style="font-size:0.8rem; margin-top:16px; opacity:0.75;">สำนักพิมพ์ไทยวัฒนาพานิช (TWP)</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Bar -->
+      <div class="hero-stats-banner">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-icon">📖</div>
+            <div class="stat-info">
+              <h4 data-i18n="stat_units">8 บทเรียน</h4>
+              <p data-i18n="stat_units_sub">ครอบคลุมครบหลักสูตร</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-info">
+              <h4 data-i18n="stat_parts">3 พาร์ท / บท</h4>
+              <p data-i18n="stat_parts_sub">อ่าน • ศัพท์ • โครงสร้าง</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🎙️</div>
+            <div class="stat-info">
+              <h4 data-i18n="stat_audio">เสียงแท้ 100%</h4>
+              <p data-i18n="stat_audio_sub">Native Audio ครบทั้ง 8 บท</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-info">
+              <h4 data-i18n="stat_offline">ออฟไลน์ 100%</h4>
+              <p data-i18n="stat_offline_sub">พร้อมใช้งานทุกเบราว์เซอร์</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dedicated Landing Page TWP Brand Footer (www.twp.co.th) -->
+      <div class="landing-twp-brand-bar">
+        <div class="landing-twp-brand-content">
+          <div class="landing-brand-logo-wrap">
+            <img src="assets/images/twp_logo.png" alt="TWP Logo" class="landing-brand-logo">
+            <div class="landing-brand-text">
+              <span class="landing-brand-name">สำนักพิมพ์ไทยวัฒนาพานิช (TWP)</span>
+              <span class="landing-brand-motto" data-i18n="footer_tagline">"รากฐานแห่งมวลปัญญา"</span>
+            </div>
+          </div>
+          <div class="landing-brand-web">
+            <a href="https://www.twp.co.th" target="_blank" rel="noopener noreferrer" class="landing-twp-web-link">
+              🌐 www.twp.co.th
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------
+         VIEW 2: DEDICATED DASHBOARD / EXERCISES HUB (รวมบทเรียน 1-8)
+         ---------------------------------------------------------- -->
+    <div id="viewDashboard" class="app-view">
+      <div class="dashboard-wrapper">
+        <div class="dashboard-top-nav">
+          <button class="btn-back-units" onclick="App.showLanding()">
+            <span>🏠</span> <span data-i18n="btn_back_home">← กลับหน้าแรก (Home)</span>
+          </button>
+          <div class="dashboard-badge-info">
+            <span>มัธยมศึกษาปีที่ 6 • CEF: B1/B2</span> • <span>แบบฝึกหัด 8 บทเรียน (ระบบเสียงจริง Native Audio)</span>
+          </div>
+        </div>
+
+        <!-- Exercises Grid Section -->
+        <section class="exercises-section" id="exercisesSection">
+          <div class="section-header">
+            <div class="section-title">
+              <h2 data-i18n="section_units_title">บทเรียนและแบบฝึกหัด (Exercises 1–8)</h2>
+              <p data-i18n="section_units_sub">เลือกบทเรียนที่ต้องการเพื่อฝึกทักษะการอ่าน คำศัพท์ และการเรียงประโยค</p>
+            </div>
+          </div>
+
+          <div class="exercises-grid" id="exercisesGrid">
+            <!-- Dynamically populated by App.renderLandingGrid() -->
+          </div>
+        </section>
+
+        <!-- Brand Footer in Dashboard -->
+        <div class="landing-twp-brand-bar">
+          <div class="landing-twp-brand-content">
+            <div class="landing-brand-logo-wrap">
+              <img src="assets/images/twp_logo.png" alt="TWP Logo" class="landing-brand-logo">
+              <div class="landing-brand-text">
+                <span class="landing-brand-name">สำนักพิมพ์ไทยวัฒนาพานิช (TWP)</span>
+                <span class="landing-brand-motto">"รากฐานแห่งมวลปัญญา"</span>
+              </div>
+            </div>
+            <div class="landing-brand-web">
+              <a href="https://www.twp.co.th" target="_blank" rel="noopener noreferrer" class="landing-twp-web-link">
+                🌐 www.twp.co.th
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------
+         VIEW 3: EXERCISE PLAYER VIEW (SPLIT LAYOUT)
+         ---------------------------------------------------------- -->
+    <div id="viewPlayer" class="app-view">
+      <div class="player-view-wrapper">
+        
+        <!-- Player Top Bar -->
+        <div class="player-top-bar">
+          <button class="btn-back-units" onclick="App.showDashboard()">
+            <span data-i18n="btn_back_to_units">← กลับหน้ารวมบทเรียน</span>
+          </button>
+          <div class="player-unit-meta" id="playerUnitMeta">
+            <!-- Unit meta populated dynamically -->
+          </div>
+          <div class="player-top-actions">
+            <button class="btn-icon" onclick="SettingsController.toggleTheme()" title="สลับธีม">
+              🌓
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Split Screen Area -->
+        <div class="player-split-grid">
+          
+          <!-- Sticky Left Column: Reading Passage & Audio -->
+          <aside class="sticky-passage-panel">
+            <div class="passage-panel-header">
+              <h4>
+                <span>📖</span> <span data-i18n="panel_reading_title">เนื้อหาบทอ่าน (Reading Passage)</span>
+              </h4>
+              <span class="audio-status-pill" id="audioStatusText" data-i18n="audio_ready">พร้อมเล่นเสียง</span>
+            </div>
+
+            <div class="passage-banner-wrap" onclick="App.openImageLightbox()" title="แตะเพื่อขยายภาพ">
+              <img id="passageBannerImg" class="passage-banner-img" src="" alt="Illustration">
+              <span class="zoom-banner-badge" data-i18n="zoom_hint">🔍 แตะเพื่อขยายภาพ</span>
+            </div>
+
+            <div class="audio-player-control">
+              <button class="btn-audio-play" id="btnAudioPlay">
+                <span>🔊</span> <span data-i18n="btn_listen_audio">ฟังเสียงอ่าน</span>
+              </button>
+              <div class="audio-meta-text">
+                <span id="audioEngineBadge">🔊 Native Audio เสียงจริง</span>
+              </div>
+            </div>
+
+            <div class="passage-scroll-area" id="passageScrollArea">
+              <!-- Paragraphs populated dynamically -->
+            </div>
+          </aside>
+
+          <!-- Right Column: Interactive 3-Part Quiz Panel -->
+          <section class="interactive-quiz-panel">
+            
+            <!-- 3-Part Tabs Header -->
+            <div class="quiz-parts-tabs">
+              <button class="quiz-tab-btn active" data-tab="partA" onclick="App.switchQuizTab('partA')">
+                <span class="tab-part-num">Part 1</span>
+                <span data-i18n="tab_part_a">Part 1: การอ่าน</span>
+              </button>
+              <button class="quiz-tab-btn" data-tab="partB" onclick="App.switchQuizTab('partB')">
+                <span class="tab-part-num">Part 2</span>
+                <span data-i18n="tab_part_b">Part 2: เติมคำศัพท์</span>
+              </button>
+              <button class="quiz-tab-btn" data-tab="partC" onclick="App.switchQuizTab('partC')">
+                <span class="tab-part-num">Part 3</span>
+                <span data-i18n="tab_part_c">Part 3: เรียงประโยค</span>
+              </button>
+              <button class="quiz-tab-btn" data-tab="review" onclick="App.switchQuizTab('review')">
+                <span class="tab-part-num">Review</span>
+                <span data-i18n="tab_review">สรุป & ไวยากรณ์</span>
+              </button>
+            </div>
+
+            <div class="quiz-tab-content-area">
+              
+              <!-- PAGE 1: PART A (COMPREHENSION) -->
+              <div id="page_partA" class="quiz-tab-page active">
+                <div class="part-instruction-card">
+                  <div class="part-instruction-text">
+                    <h4 data-i18n="inst_part_a_title">Comprehension Questions (ตอบคำถามจากบทอ่าน)</h4>
+                    <p data-i18n="inst_part_a_sub">เลือกคำตอบที่ถูกต้องที่สุดตามเนื้อหาในบทอ่านด้านซ้าย</p>
+                  </div>
+                  <div class="part-score-badge" id="partAScoreBadge">0 / 5</div>
+                </div>
+
+                <div id="partSummaryBannerA"></div>
+
+                <div id="partAQuestionsList">
+                  <!-- Questions populated dynamically -->
+                </div>
+
+                <div class="part-bottom-bar">
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button class="btn-submit-part" onclick="App.checkPartAAnswers()">
+                      <span data-i18n="btn_summary_part">📊 ตรวจ & สรุปคะแนนพาร์ทนี้</span>
+                    </button>
+                    <button class="btn-answer-key" id="btnKeyPartA" onclick="App.toggleAnswerKey('partA')">
+                      <span>🔑</span> <span data-i18n="btn_show_key">ดูเฉลยพร้อมคำอธิบาย & สรุปคะแนน</span>
+                    </button>
+                  </div>
+                  <button class="btn-next-tab" onclick="App.switchQuizTab('partB')">
+                    <span data-i18n="btn_next_part">ไปพาร์ทถัดไป ➔</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- PAGE 2: PART B (WORD BANK CLOZE) -->
+              <div id="page_partB" class="quiz-tab-page">
+                <div class="part-instruction-card">
+                  <div class="part-instruction-text">
+                    <h4 data-i18n="inst_part_b_title">Word Bank: Fill in the Blanks (เติมคำศัพท์ในช่องว่าง)</h4>
+                    <p data-i18n="inst_part_b_sub">แตะเลือกคำศัพท์จากกล่องด้านบนเพื่อนำมาเติมลงในช่องว่างให้สมบูรณ์</p>
+                  </div>
+                  <div class="part-score-badge" id="partBScoreBadge">0 / 5</div>
+                </div>
+
+                <div id="partSummaryBannerB"></div>
+
+                <!-- Word Bank Tray -->
+                <div class="wordbank-tray">
+                  <div class="wordbank-tray-label">
+                    <span>🔤</span> <span>คลังคำศัพท์ (Word Bank)</span>
+                  </div>
+                  <div class="wordbank-chips-grid" id="wordBankChips">
+                    <!-- Chips populated dynamically -->
+                  </div>
+                </div>
+
+                <!-- Sentences List -->
+                <div id="clozeSentencesList">
+                  <!-- Sentences populated dynamically -->
+                </div>
+
+                <div class="part-bottom-bar">
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button class="btn-submit-part" onclick="App.checkPartBAnswers()">
+                      <span data-i18n="btn_summary_part">📊 ตรวจ & สรุปคะแนนพาร์ทนี้</span>
+                    </button>
+                    <button class="btn-answer-key" id="btnKeyPartB" onclick="App.toggleAnswerKey('partB')">
+                      <span>🔑</span> <span data-i18n="btn_show_key">ดูเฉลยพร้อมคำอธิบาย & สรุปคะแนน</span>
+                    </button>
+                  </div>
+                  <button class="btn-next-tab" onclick="App.switchQuizTab('partC')">
+                    <span data-i18n="btn_next_part">ไปพาร์ทถัดไป ➔</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- PAGE 3: PART C (SENTENCE UNSCRAMBLE) -->
+              <div id="page_partC" class="quiz-tab-page">
+                <div class="part-instruction-card">
+                  <div class="part-instruction-text">
+                    <h4 data-i18n="inst_part_c_title">Sentence Unscramble (เรียงคำเป็นประโยคที่ถูกต้อง)</h4>
+                    <p data-i18n="inst_part_c_sub">แตะกลุ่มคำด้านล่างเพื่อเรียงเป็นประโยคตามหลักไวยากรณ์และความหมาย</p>
+                  </div>
+                  <div class="part-score-badge" id="partCScoreBadge">0 / 5</div>
+                </div>
+
+                <div id="partSummaryBannerC"></div>
+
+                <div id="unscrambleCardsList">
+                  <!-- Unscramble items populated dynamically -->
+                </div>
+
+                <div class="part-bottom-bar">
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button class="btn-submit-part" onclick="App.checkPartCAnswers()">
+                      <span data-i18n="btn_summary_part">📊 ตรวจ & สรุปคะแนนพาร์ทนี้</span>
+                    </button>
+                    <button class="btn-answer-key" id="btnKeyPartC" onclick="App.toggleAnswerKey('partC')">
+                      <span>🔑</span> <span data-i18n="btn_show_key">ดูเฉลยพร้อมคำอธิบาย & สรุปคะแนน</span>
+                    </button>
+                  </div>
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button class="btn-next-tab" onclick="App.switchQuizTab('review')">
+                      <span data-i18n="btn_next_review">ไปสรุป & ไวยากรณ์ ➔</span>
+                    </button>
+                    <button class="btn-primary-hero" style="padding:10px 18px; font-size:0.95rem; border-radius:10px;" onclick="App.finishExercise()">
+                      <span>🏆</span> <span data-i18n="btn_finish_unit">สรุปคะแนนรวมทุก Part ➔</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PAGE 4: REVIEW & GRAMMAR -->
+              <div id="page_review" class="quiz-tab-page">
+                <div class="review-container">
+                  
+                  <!-- Vocab Box -->
+                  <div class="review-section-box">
+                    <h3 data-i18n="review_vocab_title">📚 คำศัพท์สำคัญประจำบท (Key Vocabulary)</h3>
+                    <table class="vocab-table">
+                      <thead>
+                        <tr>
+                          <th data-i18n="col_word">คำศัพท์</th>
+                          <th data-i18n="col_pos">ชนิดคำ</th>
+                          <th data-i18n="col_meaning">ความหมายภาษาไทย</th>
+                          <th data-i18n="col_pronounce">การออกเสียง</th>
+                        </tr>
+                      </thead>
+                      <tbody id="reviewVocabBody">
+                        <!-- Populated dynamically -->
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Grammar Box -->
+                  <div class="review-section-box">
+                    <h3 data-i18n="review_grammar_title">💡 สรุปหลักไวยากรณ์ (Grammar Focus)</h3>
+                    <div class="grammar-tip-card" id="reviewGrammarCard">
+                      <!-- Populated dynamically -->
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="part-bottom-bar">
+                  <div></div>
+                  <button class="btn-primary-hero" onclick="App.finishExercise()">
+                    <span>🎉</span> <span data-i18n="btn_finish_unit">สรุปคะแนนบทนี้ 🎉</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------
+         VIEW 3: SCORE SUMMARY VIEW
+         ---------------------------------------------------------- -->
+    <div id="viewSummary" class="app-view">
+      <div class="summary-wrapper">
+        <div class="summary-card">
+          <div class="summary-badge-icon" id="summaryBadgeIcon">🏆</div>
+          <div class="summary-eval-pill" id="summaryFeedbackText">ยอดเยี่ยมมาก รักษามาตรฐานต่อไป</div>
+          <div class="summary-unit-title" id="summaryUnitTitle">Unit 1: The Colors of Humanity</div>
+
+          <div class="score-display-ring">
+            <span class="score-big-num" id="summaryTotalNum">15</span>
+            <span class="score-total-max">/ 15</span>
+          </div>
+
+          <div class="parts-score-breakdown">
+            <div class="score-col-box">
+              <h5 data-i18n="summary_part_a">Part 1: การอ่าน</h5>
+              <div class="score-col-num" id="sumScorePartA">5 / 5</div>
+            </div>
+            <div class="score-col-box">
+              <h5 data-i18n="summary_part_b">Part 2: ศัพท์</h5>
+              <div class="score-col-num" id="sumScorePartB">5 / 5</div>
+            </div>
+            <div class="score-col-box">
+              <h5 data-i18n="summary_part_c">Part 3: เรียงประโยค</h5>
+              <div class="score-col-num" id="sumScorePartC">5 / 5</div>
+            </div>
+          </div>
+
+          <div class="summary-actions-row">
+            <button class="btn-secondary-hero" style="color:var(--ocean-deep); border-color:var(--ocean-primary);" onclick="App.openExercise(AppState.currentExercise.id)">
+              <span data-i18n="btn_retry_unit">ทำบทนี้อีกครั้ง ↺</span>
+            </button>
+            <button class="btn-primary-hero" id="btnSummaryNext" onclick="App.nextExercise()">
+              <span data-i18n="btn_choose_next">ไปยังบทถัดไป ➔</span>
+            </button>
+            <button class="btn-back-units" onclick="App.showDashboard()">
+              <span data-i18n="btn_back_to_units">← กลับหน้ารวมบทเรียน</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Image Lightbox Modal (Zoom In / Out) -->
+  <div class="lightbox-overlay" id="imageLightboxModal" onclick="if(event.target===this) App.closeImageLightbox()">
+    <div class="lightbox-controls">
+      <button class="btn-lightbox-action" onclick="App.zoomLightbox(0.25)" title="ขยายภาพ (+)">➕</button>
+      <button class="btn-lightbox-action" onclick="App.zoomLightbox(-0.25)" title="หดภาพ (−)">➖</button>
+      <button class="btn-lightbox-action" onclick="App.resetLightboxZoom()" title="ขนาดปกติ (100%)">↺</button>
+      <button class="btn-lightbox-action" onclick="App.closeImageLightbox()" title="ปิด (Close)">✕</button>
+    </div>
+    <div class="lightbox-img-container" onclick="App.toggleLightboxZoomClick(event)">
+      <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged Illustration">
+    </div>
+    <div class="lightbox-caption" id="lightboxCaption">Unit 1: The Colors of Humanity</div>
+  </div>
+
+  <!-- ============================================================
+       MODALS: SETTINGS & SYSTEM DIAGNOSTICS
+       ============================================================ -->
+  <!-- Settings Modal -->
+  <div class="modal-overlay" id="settingsModal" onclick="if(event.target===this) SettingsController.closeModal()">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 data-i18n="modal_settings_title">⚙️ การตั้งค่าระบบ (Settings)</h3>
+        <button class="btn-close-modal" onclick="SettingsController.closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-row">
+          <div class="setting-text">
+            <h5 data-i18n="setting_sound_title">เสียงประกอบ (Sound Effects)</h5>
+            <p data-i18n="setting_sound_desc">เปิด/ปิดเสียงปี๊บตอบถูก ตอบผิด และเสียง Fanfare</p>
+          </div>
+          <input type="checkbox" id="soundToggleCheckbox" checked onchange="SettingsController.toggleSound()" style="transform: scale(1.3); cursor:pointer;">
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-text">
+            <h5 data-i18n="setting_voice_title">ทดสอบเสียงอ่านสังเคราะห์ (TTS)</h5>
+            <p data-i18n="setting_voice_desc">ฟังตัวอย่างเสียงผู้หญิงธรรมชาติที่ระบบคัดเลือกให้</p>
+          </div>
+          <button class="btn-sm-action" style="background:var(--ocean-primary); color:#fff;" onclick="SpeechEngine.testVoice()">
+            <span data-i18n="btn_test_voice">ทดสอบเสียง</span>
+          </button>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-text">
+            <h5>ขนาดตัวอักษร (Font Size)</h5>
+            <p>ปรับขนาดตัวอักษรเพื่อความสบายตาในการอ่าน</p>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-sm-action" style="background:var(--bg-subtle);" onclick="SettingsController.applyFontSize('small')">A-</button>
+            <button class="btn-sm-action" style="background:var(--bg-subtle);" onclick="SettingsController.applyFontSize('normal')">A</button>
+            <button class="btn-sm-action" style="background:var(--bg-subtle);" onclick="SettingsController.applyFontSize('large')">A+</button>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-text">
+            <h5 data-i18n="setting_reset_title">รีเซ็ตคะแนนและความก้าวหน้า</h5>
+            <p data-i18n="setting_reset_desc">ล้างประวัติการทำแบบฝึกหัดทั้งหมดในเครื่องนี้</p>
+          </div>
+          <button class="btn-sm-action" style="background:var(--danger); color:#fff;" onclick="SettingsController.resetAllProgress()">
+            <span data-i18n="btn_reset_storage">ล้างข้อมูล</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- System Diagnostics Modal -->
+  <div class="modal-overlay" id="systemModal" onclick="if(event.target===this) SystemCheck.closeModal()">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🩺 ตรวจสอบความพร้อมของระบบ (Diagnostics)</h3>
+        <button class="btn-close-modal" onclick="SystemCheck.closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="systemResultsContainer">
+        <!-- Results populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-logo-row">
+        <img src="assets/images/twp_logo.png" alt="TWP" class="footer-logo-img">
+        <span style="font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px;">สำนักพิมพ์ไทยวัฒนาพานิช (TWP)</span>
+      </div>
+      <div class="footer-tagline" data-i18n="footer_tagline">"รากฐานแห่งมวลปัญญา"</div>
+      <div style="margin: 8px 0;">
+        <a href="https://www.twp.co.th" target="_blank" rel="noopener noreferrer" style="color:var(--accent-yellow); font-weight:700; font-size:1.05rem; text-decoration:none;">
+          🌐 www.twp.co.th
+        </a>
+      </div>
+      <div class="footer-copy" data-i18n="footer_copy">
+        © สำนักพิมพ์ไทยวัฒนาพานิช (TWP) & Cengage Learning. สงวนลิขสิทธิ์ทุกประการ.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script src="js/qrcode.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/system-check.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+<!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
