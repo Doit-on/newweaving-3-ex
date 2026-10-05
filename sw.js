@@ -1,4 +1,5 @@
 const CACHE_NAME = 'new-weaving-3-v3.1.0-azure';
+
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -33,12 +34,12 @@ const MEDIA_ASSETS = [
 ];
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
       await cache.addAll(CORE_ASSETS);
-      // Cache media assets non-blocking
       await Promise.allSettled(MEDIA_ASSETS.map(url => cache.add(url)));
-    }).then(() => self.skipWaiting())
+    })
   );
 });
 
@@ -54,20 +55,38 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  const url = new URL(event.request.url);
+
+  // Network First for HTML, JS, CSS to ensure updates take effect immediately on reload
+  const isCode = url.pathname.endsWith('.html') ||
+                 url.pathname.endsWith('.js') ||
+                 url.pathname.endsWith('.css') ||
+                 url.pathname === '/' ||
+                 url.pathname.endsWith('/');
+
+  if (isCode) {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        if (response && response.status === 200) {
+          const toCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, toCache));
+        }
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Cache First for Media Assets (Audio & Images)
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
       return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
+        if (response && response.status === 200) {
+          const toCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, toCache));
         }
-        const toCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, toCache));
         return response;
-      }).catch(() => {
-        if (event.request.headers.get('accept')?.includes('text/html')) {
-          return caches.match('./index.html');
-        }
       });
     })
   );
