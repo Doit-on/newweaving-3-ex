@@ -15,9 +15,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Sarabun:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Immediate Service Worker & Cache Purge to prevent stale cached versions -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(regs => {
+        for (const reg of regs) reg.unregister();
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(keys => {
+        keys.forEach(k => caches.delete(k));
+      });
+    }
+  </script>
+
   <!-- Favicon & Stylesheet -->
   <link rel="icon" type="image/png" href="assets/images/twp_logo.png">
-  <link rel="stylesheet" href="css/style.css?v=3.1.0">
+  <link rel="stylesheet" href="css/style.css?v=3.2.0-live">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -591,27 +609,16 @@
       <div class="footer-copy" data-i18n="footer_copy">
         © สำนักพิมพ์ไทยวัฒนาพานิช (TWP) & Cengage Learning. สงวนลิขสิทธิ์ทุกประการ.
       </div>
-      <div style="margin-top:6px; font-size:0.82rem; color:#94a3b8; font-weight:600;">NEW Weaving 3 • Version: <span style="color:#38bdf8;">v3.1.0-azure</span></div>
+      <div style="margin-top:6px; font-size:0.82rem; color:#94a3b8; font-weight:600;">NEW Weaving 3 • Version: <span style="color:#38bdf8;">v3.2.0-live</span></div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  
-  <script src="js/qrcode.min.js?v=3.1.0"></script>
-  <script src="js/i18n.js?v=3.1.0"></script>
-  <script src="js/settings.js?v=3.1.0"></script>
-  <script src="js/system-check.js?v=3.1.0"></script>
-  <script src="js/data.js?v=3.1.0"></script>
-  <script src="js/app.js?v=3.1.0"></script>
-<!-- PWA Service Worker Registration & Cache Invalidation -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=3.1.0').then(reg => {
-          reg.update();
-        }).catch(() => {});
-      });
-    }
-  </script>
+  <!-- Scripts (Versioned to guarantee immediate refresh on all browsers) -->
+  <script src="js/qrcode.min.js?v=3.2.0-live"></script>
+  <script src="js/i18n.js?v=3.2.0-live"></script>
+  <script src="js/settings.js?v=3.2.0-live"></script>
+  <script src="js/system-check.js?v=3.2.0-live"></script>
+  <script src="js/data.js?v=3.2.0-live"></script>
+  <script src="js/app.js?v=3.2.0-live"></script>
 </body>
 </html>

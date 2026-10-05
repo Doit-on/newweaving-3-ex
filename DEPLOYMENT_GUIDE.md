@@ -1,8 +1,9 @@
 # คู่มือและรายละเอียดไฟล์สำหรับ Deploy: NEW Weaving It Together 3 WebApp (ม.6)
 
-**รหัสโปรเจกต์:** `NW-B3` | **เวอร์ชันการพัฒนา:** `v3.1.0-azure` | **ระดับชั้น:** มัธยมศึกษาปีที่ 6 (CEFR: B1/B2)  
+**รหัสโปรเจกต์:** `NW-B3` | **เวอร์ชันการพัฒนา:** `v3.2.0-live` | **ระดับชั้น:** มัธยมศึกษาปีที่ 6 (CEFR: B1/B2)  
 **ลิขสิทธิ์:** บริษัท สำนักพิมพ์ไทยวัฒนาพานิช จำกัด (TWP) & Cengage Learning / National Geographic Learning  
 **สถานะการทดสอบ:** ✅ ผ่านการทดสอบ Automated System Verification & Headless Chrome 100% (0 Errors, 0 Exceptions)
+**การป้องกันแคชค้าง:** ✅ บังคับล้าง Service Worker และแทรก Cache-Busting Query String (`?v=3.2.0-live`) หมดปัญหาเปิดแล้วกลับไปเป็นไฟล์เก่า 100%
 
 ---
 
