@@ -1,4 +1,4 @@
-const CACHE_NAME = 'new-weaving-3-v3.0.0-azure';
+const CACHE_NAME = 'new-weaving-3-v3.1.0-azure';
 const CORE_ASSETS = [
   './',
   './index.html',
