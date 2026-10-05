@@ -1,8 +1,9 @@
 /**
  * NEW Weaving It Together 3 (ม.6) - Curriculum & Exercise Dataset
  * สำนักพิมพ์ไทยวัฒนาพานิช (TWP) & Cengage Learning / National Geographic Learning
- * CEF: B1/B2 Level | Version: v3.0.0-azure
- * Part 3: Strictly matching original PDF curriculum slash tokens & target sentences
+ * CEF: B1/B2 Level | Version: v3.1.0-azure
+ * Part 3: Word pills at top with full stop '.' on the final chunk
+ * Unit 8: Poetic stanzas / couplets display
  */
 
 const DEFAULT_EXERCISES = [
@@ -166,61 +167,61 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "represent / in life / opposite forces / two / Yin and Yang",
+        "prompt": "represent / in life. / opposite forces / two / Yin and Yang",
         "tokens": [
           "Yin and Yang",
           "represent",
           "two",
           "opposite forces",
-          "in life"
+          "in life."
         ],
         "correct": "Yin and Yang represent two opposite forces in life."
       },
       {
         "id": 2,
-        "prompt": "more peacefully / can help / Finding / live / balance / us",
+        "prompt": "more peacefully. / can help / Finding / live / balance / us",
         "tokens": [
           "Finding",
           "balance",
           "can help",
           "us",
           "live",
-          "more peacefully"
+          "more peacefully."
         ],
         "correct": "Finding balance can help us live more peacefully."
       },
       {
         "id": 3,
-        "prompt": "Life / includes / both / positive / and difficult / experiences",
+        "prompt": "Life / includes / both / positive / and difficult / experiences.",
         "tokens": [
           "Life",
           "includes",
           "both",
           "positive",
           "and difficult",
-          "experiences"
+          "experiences."
         ],
         "correct": "Life includes both positive and difficult experiences."
       },
       {
         "id": 4,
-        "prompt": "in Feng Shui / Yin-Yang ideas / and martial arts / can be found",
+        "prompt": "in Feng Shui / Yin-Yang ideas / and martial arts. / can be found",
         "tokens": [
           "Yin-Yang ideas",
           "can be found",
           "in Feng Shui",
-          "and martial arts"
+          "and martial arts."
         ],
         "correct": "Yin-Yang ideas can be found in Feng Shui and martial arts."
       },
       {
         "id": 5,
-        "prompt": "can work / in harmony / Different energies / together",
+        "prompt": "can work / in harmony. / Different energies / together",
         "tokens": [
           "Different energies",
           "can work",
           "together",
-          "in harmony"
+          "in harmony."
         ],
         "correct": "Different energies can work together in harmony."
       }
@@ -446,60 +447,60 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "have relied on / Farmers / for agricultural work / buffaloes / for centuries",
+        "prompt": "have relied on / Farmers / for agricultural work / buffaloes / for centuries.",
         "tokens": [
           "Farmers",
           "have relied on",
           "buffaloes",
           "for agricultural work",
-          "for centuries"
+          "for centuries."
         ],
         "correct": "Farmers have relied on buffaloes for agricultural work for centuries."
       },
       {
         "id": 2,
-        "prompt": "many / The festival / each year / attracts / spectators",
+        "prompt": "many / The festival / each year. / attracts / spectators",
         "tokens": [
           "The festival",
           "attracts",
           "many",
           "spectators",
-          "each year"
+          "each year."
         ],
         "correct": "The festival attracts many spectators each year."
       },
       {
         "id": 3,
-        "prompt": "create / environment / Colorful / a festive / decorations",
+        "prompt": "create / environment. / Colorful / a festive / decorations",
         "tokens": [
           "Colorful",
           "decorations",
           "create",
           "a festive",
-          "environment"
+          "environment."
         ],
         "correct": "Colorful decorations create a festive environment."
       },
       {
         "id": 4,
-        "prompt": "Thailand’s / The event / rural heritage / celebrates",
+        "prompt": "Thailand’s / The event / rural heritage. / celebrates",
         "tokens": [
           "The event",
           "celebrates",
           "Thailand’s",
-          "rural heritage"
+          "rural heritage."
         ],
         "correct": "The event celebrates Thailand’s rural heritage."
       },
       {
         "id": 5,
-        "prompt": "their culture / work together / Local / to preserve / communities",
+        "prompt": "their culture. / work together / Local / to preserve / communities",
         "tokens": [
           "Local",
           "communities",
           "work together",
           "to preserve",
-          "their culture"
+          "their culture."
         ],
         "correct": "Local communities work together to preserve their culture."
       }
@@ -687,14 +688,14 @@ const DEFAULT_EXERCISES = [
         "compatibility",
         "reflecting",
         "traits",
-        "astrology"
+        "Astrology"
       ],
       "questions": [
         {
           "id": 1,
           "prefix": "",
           "suffix": " uses zodiac signs to explore personality and relationships.",
-          "answer": "astrology"
+          "answer": "Astrology"
         },
         {
           "id": 2,
@@ -725,62 +726,62 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "are divided / into / Zodiac signs / four / elements / different",
+        "prompt": "are divided / into / Zodiac signs / four / elements. / different",
         "tokens": [
           "Zodiac signs",
           "are divided",
           "into",
           "four",
           "different",
-          "elements"
+          "elements."
         ],
         "correct": "Zodiac signs are divided into four different elements."
       },
       {
         "id": 2,
-        "prompt": "and adventurous / Fire signs / energetic / described as / are often",
+        "prompt": "and adventurous. / Fire signs / energetic / described as / are often",
         "tokens": [
           "Fire signs",
           "are often",
           "described as",
           "energetic",
-          "and adventurous"
+          "and adventurous."
         ],
         "correct": "Fire signs are often described as energetic and adventurous."
       },
       {
         "id": 3,
-        "prompt": "and reliable / are associated with / Earth signs / practical / personalities",
+        "prompt": "and reliable / are associated with / Earth signs / practical / personalities.",
         "tokens": [
           "Earth signs",
           "are associated with",
           "practical",
           "and reliable",
-          "personalities"
+          "personalities."
         ],
         "correct": "Earth signs are associated with practical and reliable personalities."
       },
       {
         "id": 4,
-        "prompt": "to enjoy / are believed / ideas / Air signs / and communication",
+        "prompt": "to enjoy / are believed / ideas / Air signs / and communication.",
         "tokens": [
           "Air signs",
           "are believed",
           "to enjoy",
           "ideas",
-          "and communication"
+          "and communication."
         ],
         "correct": "Air signs are believed to enjoy ideas and communication."
       },
       {
         "id": 5,
-        "prompt": "and apps / remain / Horoscopes / popular on / social media",
+        "prompt": "and apps. / remain / Horoscopes / popular on / social media",
         "tokens": [
           "Horoscopes",
           "remain",
           "popular on",
           "social media",
-          "and apps"
+          "and apps."
         ],
         "correct": "Horoscopes remain popular on social media and apps."
       }
@@ -1006,62 +1007,62 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "social animals / Her / showed that / research / gorillas / are",
+        "prompt": "social animals. / Her / showed that / research / gorillas / are",
         "tokens": [
           "Her",
           "research",
           "showed that",
           "gorillas",
           "are",
-          "social animals"
+          "social animals."
         ],
         "correct": "Her research showed that gorillas are social animals."
       },
       {
         "id": 2,
-        "prompt": "wild animals / Illegal hunting / can put / serious danger / in",
+        "prompt": "wild animals / Illegal hunting / can put / serious danger. / in",
         "tokens": [
           "Illegal hunting",
           "can put",
           "wild animals",
           "in",
-          "serious danger"
+          "serious danger."
         ],
         "correct": "Illegal hunting can put wild animals in serious danger."
       },
       {
         "id": 3,
-        "prompt": "to protect / their habitat / She / worked hard / gorillas / and",
+        "prompt": "to protect / their habitat. / She / worked hard / gorillas / and",
         "tokens": [
           "She",
           "worked hard",
           "to protect",
           "gorillas",
           "and",
-          "their habitat"
+          "their habitat."
         ],
         "correct": "She worked hard to protect gorillas and their habitat."
       },
       {
         "id": 4,
-        "prompt": "is important for / Protecting natural habitats / survival / wildlife",
+        "prompt": "is important for / Protecting natural habitats / survival. / wildlife",
         "tokens": [
           "Protecting natural habitats",
           "is important for",
           "wildlife",
-          "survival"
+          "survival."
         ],
         "correct": "Protecting natural habitats is important for wildlife survival."
       },
       {
         "id": 5,
-        "prompt": "continues to / animal conservation / inspire / today / Fossey’s work",
+        "prompt": "continues to / animal conservation / inspire / today. / Fossey’s work",
         "tokens": [
           "Fossey’s work",
           "continues to",
           "inspire",
           "animal conservation",
-          "today"
+          "today."
         ],
         "correct": "Fossey’s work continues to inspire animal conservation today."
       }
@@ -1287,61 +1288,61 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "is famous for / bold flavor / Kimchi / its / and strong smell",
+        "prompt": "is famous for / bold flavor / Kimchi / its / and strong smell.",
         "tokens": [
           "Kimchi",
           "is famous for",
           "its",
           "bold flavor",
-          "and strong smell"
+          "and strong smell."
         ],
         "correct": "Kimchi is famous for its bold flavor and strong smell."
       },
       {
         "id": 2,
-        "prompt": "vegetables / can help / Salt / preserve / a long time / for",
+        "prompt": "vegetables / can help / Salt / preserve / a long time. / for",
         "tokens": [
           "Salt",
           "can help",
           "preserve",
           "vegetables",
           "for",
-          "a long time"
+          "a long time."
         ],
         "correct": "Salt can help preserve vegetables for a long time."
       },
       {
         "id": 3,
-        "prompt": "generations / Korean families / kimchi / have made / for many",
+        "prompt": "generations. / Korean families / kimchi / have made / for many",
         "tokens": [
           "Korean families",
           "have made",
           "kimchi",
           "for many",
-          "generations"
+          "generations."
         ],
         "correct": "Korean families have made kimchi for many generations."
       },
       {
         "id": 4,
-        "prompt": "together / Kimjang / and communities / brings / families",
+        "prompt": "together. / Kimjang / and communities / brings / families",
         "tokens": [
           "Kimjang",
           "brings",
           "families",
           "and communities",
-          "together"
+          "together."
         ],
         "correct": "Kimjang brings families and communities together."
       },
       {
         "id": 5,
-        "prompt": "probiotics / Some fermented foods / helpful / contain",
+        "prompt": "probiotics. / Some fermented foods / helpful / contain",
         "tokens": [
           "Some fermented foods",
           "contain",
           "helpful",
-          "probiotics"
+          "probiotics."
         ],
         "correct": "Some fermented foods contain helpful probiotics."
       }
@@ -1567,60 +1568,60 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "the same language / could make / easier / global communication / Speaking",
+        "prompt": "the same language / could make / easier. / global communication / Speaking",
         "tokens": [
           "Speaking",
           "the same language",
           "could make",
           "global communication",
-          "easier"
+          "easier."
         ],
         "correct": "Speaking the same language could make global communication easier."
       },
       {
         "id": 2,
-        "prompt": "in danger of / Some / are / disappearing / languages",
+        "prompt": "in danger of / Some / are / disappearing. / languages",
         "tokens": [
           "Some",
           "languages",
           "are",
           "in danger of",
-          "disappearing"
+          "disappearing."
         ],
         "correct": "Some languages are in danger of disappearing."
       },
       {
         "id": 3,
-        "prompt": "and knowledge / Every language / unique / contains / traditions",
+        "prompt": "and knowledge. / Every language / unique / contains / traditions",
         "tokens": [
           "Every language",
           "contains",
           "unique",
           "traditions",
-          "and knowledge"
+          "and knowledge."
         ],
         "correct": "Every language contains unique traditions and knowledge."
       },
       {
         "id": 4,
-        "prompt": "the world’s / We / linguistic diversity / should protect",
+        "prompt": "the world’s / We / linguistic diversity. / should protect",
         "tokens": [
           "We",
           "should protect",
           "the world’s",
-          "linguistic diversity"
+          "linguistic diversity."
         ],
         "correct": "We should protect the world’s linguistic diversity."
       },
       {
         "id": 5,
-        "prompt": "can help / overcome / Technology / people / language barriers",
+        "prompt": "can help / overcome / Technology / people / language barriers.",
         "tokens": [
           "Technology",
           "can help",
           "people",
           "overcome",
-          "language barriers"
+          "language barriers."
         ],
         "correct": "Technology can help people overcome language barriers."
       }
@@ -1846,59 +1847,59 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "marine animals / Plastic waste / can / seriously harm",
+        "prompt": "marine animals. / Plastic waste / can / seriously harm",
         "tokens": [
           "Plastic waste",
           "can",
           "seriously harm",
-          "marine animals"
+          "marine animals."
         ],
         "correct": "Plastic waste can seriously harm marine animals."
       },
       {
         "id": 2,
-        "prompt": "can trap / Abandoned / and turtles / dolphins / fishing nets",
+        "prompt": "can trap / Abandoned / and turtles. / dolphins / fishing nets",
         "tokens": [
           "Abandoned",
           "fishing nets",
           "can trap",
           "dolphins",
-          "and turtles"
+          "and turtles."
         ],
         "correct": "Abandoned fishing nets can trap dolphins and turtles."
       },
       {
         "id": 3,
-        "prompt": "food chain / Microplastics / the marine / can enter",
+        "prompt": "food chain. / Microplastics / the marine / can enter",
         "tokens": [
           "Microplastics",
           "can enter",
           "the marine",
-          "food chain"
+          "food chain."
         ],
         "correct": "Microplastics can enter the marine food chain."
       },
       {
         "id": 4,
-        "prompt": "can reduce / Using / plastic waste / reusable / products",
+        "prompt": "can reduce / Using / plastic waste. / reusable / products",
         "tokens": [
           "Using",
           "reusable",
           "products",
           "can reduce",
-          "plastic waste"
+          "plastic waste."
         ],
         "correct": "Using reusable products can reduce plastic waste."
       },
       {
         "id": 5,
-        "prompt": "can make / our daily habits / Small changes / a difference / in",
+        "prompt": "can make / our daily habits / Small changes / a difference. / in",
         "tokens": [
           "Small changes",
           "in",
           "our daily habits",
           "can make",
-          "a difference"
+          "a difference."
         ],
         "correct": "Small changes in our daily habits can make a difference."
       }
@@ -1972,10 +1973,16 @@ const DEFAULT_EXERCISES = [
     "unit": "Unit 8",
     "image": "assets/images/ex8.jpg",
     "audio": "assets/audio/ex8_fox_and_grapes.mp3",
-    "passage": "A hungry fox walked through the heat, Searching everywhere for something sweet. He saw some grapes upon a vine, Hanging high and looking fine. He jumped and stretched with all his might, But every try just wasn’t right. Again he jumped, again he tried, But still the grapes stayed far too high.\n\nAt last he stopped and walked away, “Those grapes are sour anyway!” He acted like he did not care, Because the grapes were unreachable there. The story teaches us that when we fail, We sometimes change the way we tell the tale. Instead of admitting we could not succeed, We may dislike what we cannot achieve.",
+    "passage": "A hungry fox walked through the heat,\nSearching everywhere for something sweet.\n\nHe saw some grapes upon a vine,\nHanging high and looking fine.\n\nHe jumped and stretched with all his might,\nBut every try just wasn’t right.\n\nAgain he jumped, again he tried,\nBut still the grapes stayed far too high.\n\nAt last he stopped and walked away,\n“Those grapes are sour anyway!”\n\nHe acted like he did not care,\nBecause the grapes were unreachable there.\n\nThe story teaches us that when we fail,\nWe sometimes change the way we tell the tale.\n\nInstead of admitting we could not succeed,\nWe may dislike what we cannot achieve.",
     "paragraphs": [
-      "A hungry fox walked through the heat, Searching everywhere for something sweet. He saw some grapes upon a vine, Hanging high and looking fine. He jumped and stretched with all his might, But every try just wasn’t right. Again he jumped, again he tried, But still the grapes stayed far too high.",
-      "At last he stopped and walked away, “Those grapes are sour anyway!” He acted like he did not care, Because the grapes were unreachable there. The story teaches us that when we fail, We sometimes change the way we tell the tale. Instead of admitting we could not succeed, We may dislike what we cannot achieve."
+      "A hungry fox walked through the heat,\nSearching everywhere for something sweet.",
+      "He saw some grapes upon a vine,\nHanging high and looking fine.",
+      "He jumped and stretched with all his might,\nBut every try just wasn’t right.",
+      "Again he jumped, again he tried,\nBut still the grapes stayed far too high.",
+      "At last he stopped and walked away,\n“Those grapes are sour anyway!”",
+      "He acted like he did not care,\nBecause the grapes were unreachable there.",
+      "The story teaches us that when we fail,\nWe sometimes change the way we tell the tale.",
+      "Instead of admitting we could not succeed,\nWe may dislike what we cannot achieve."
     ],
     "partA": [
       {
@@ -2123,66 +2130,66 @@ const DEFAULT_EXERCISES = [
     "partC": [
       {
         "id": 1,
-        "prompt": "noticed / some grapes / The fox / the ground / high above / hanging",
+        "prompt": "noticed / some grapes / The fox / the ground. / high above / hanging",
         "tokens": [
           "The fox",
           "noticed",
           "some grapes",
           "hanging",
           "high above",
-          "the ground"
+          "the ground."
         ],
         "correct": "The fox noticed some grapes hanging high above the ground."
       },
       {
         "id": 2,
-        "prompt": "to reach / The fox / attempts / them / several / made",
+        "prompt": "to reach / The fox / attempts / them. / several / made",
         "tokens": [
           "The fox",
           "made",
           "several",
           "attempts",
           "to reach",
-          "them"
+          "them."
         ],
         "correct": "The fox made several attempts to reach them."
       },
       {
         "id": 3,
-        "prompt": "had failed / The fox / to admit / refused / he / that",
+        "prompt": "had failed. / The fox / to admit / refused / he / that",
         "tokens": [
           "The fox",
           "refused",
           "to admit",
           "that",
           "he",
-          "had failed"
+          "had failed."
         ],
         "correct": "The fox refused to admit that he had failed."
       },
       {
         "id": 4,
-        "prompt": "disappointment / People / make / to avoid / excuses / sometimes",
+        "prompt": "disappointment. / People / make / to avoid / excuses / sometimes",
         "tokens": [
           "People",
           "sometimes",
           "make",
           "excuses",
           "to avoid",
-          "disappointment"
+          "disappointment."
         ],
         "correct": "People sometimes make excuses to avoid disappointment."
       },
       {
         "id": 5,
-        "prompt": "to be honest / The story / us / teaches / our failures / about",
+        "prompt": "to be honest / The story / us / teaches / our failures. / about",
         "tokens": [
           "The story",
           "teaches",
           "us",
           "to be honest",
           "about",
-          "our failures"
+          "our failures."
         ],
         "correct": "The story teaches us to be honest about our failures."
       }
@@ -2246,7 +2253,8 @@ const DEFAULT_EXERCISES = [
         "en": "Preposition 'Instead of' + Gerund: 'Instead of admitting we could not succeed' ('Instead of + V.ing' shows substitution or alternative action).",
         "th": "บุพบท 'Instead of' + Gerund: โครงสร้าง 'Instead of + V.ing' หมายถึง 'แทนที่จะ...' เช่น แทนที่จะยอมรับความล้มเหลว (Instead of admitting...)"
       }
-    }
+    },
+    "isPoem": true
   }
 ];
 

@@ -604,9 +604,17 @@ const App = {
 
     const scrollArea = document.getElementById('passageScrollArea');
     if (scrollArea) {
-      scrollArea.innerHTML = ex.paragraphs.map((p, idx) => `
-        <p data-p-idx="${idx}">${p}</p>
-      `).join('');
+      if (ex.isPoem || ex.id === 8) {
+        scrollArea.classList.add('poem-mode');
+        scrollArea.innerHTML = ex.paragraphs.map((p, idx) => `
+          <div class="poem-couplet" data-p-idx="${idx}">${p.replace(/\n/g, '<br>')}</div>
+        `).join('');
+      } else {
+        scrollArea.classList.remove('poem-mode');
+        scrollArea.innerHTML = ex.paragraphs.map((p, idx) => `
+          <p data-p-idx="${idx}">${p}</p>
+        `).join('');
+      }
     }
 
     const btnAudio = document.getElementById('btnAudioPlay');
@@ -1006,17 +1014,6 @@ const App = {
       return `
         <div class="unscramble-card" id="unscramble_block_${qIdx}">
           <div class="unscramble-q-num">${(typeof I18N !== "undefined" && I18N.currentLang === "en") ? "Sentence " + (qIdx + 1) : "ข้อที่ " + (qIdx + 1)}</div>
-          
-          ${q.prompt ? `
-            <div class="unscramble-prompt-box">
-              <span class="unscramble-prompt-label">${(typeof I18N !== "undefined" && I18N.currentLang === "en") ? "Scrambled Chunks:" : "โจทย์ประโยคสลับคำ:"}</span>
-              <span class="unscramble-prompt-text">${q.prompt}</span>
-            </div>
-          ` : ''}
-
-          <div class="unscramble-dropzone" id="dropzone_${qIdx}">
-            <span style="color:var(--text-muted); font-size:0.85rem;" id="dropzone_hint_${qIdx}">${(typeof I18N !== "undefined" && I18N.currentLang === "en") ? "Tap token chunks below to build sentence" : "แตะกลุ่มคำด้านล่างเพื่อเรียงประโยค"}</span>
-          </div>
 
           <div class="unscramble-bank" id="token_bank_${qIdx}">
             ${(() => {
@@ -1044,6 +1041,10 @@ const App = {
                 </span>
               `).join('');
             })()}
+          </div>
+
+          <div class="unscramble-dropzone" id="dropzone_${qIdx}">
+            <span style="color:var(--text-muted); font-size:0.85rem;" id="dropzone_hint_${qIdx}">${(typeof I18N !== "undefined" && I18N.currentLang === "en") ? "Tap word chunks above to build sentence" : "แตะกลุ่มคำด้านบนเพื่อเรียงประโยค"}</span>
           </div>
 
           <div class="unscramble-actions">
@@ -1100,7 +1101,8 @@ const App = {
 
     if (tokens.length === 0) {
       dropzone.classList.remove('has-tokens');
-      dropzone.innerHTML = `<span style="color:var(--text-muted); font-size:0.85rem;" id="dropzone_hint_${qIdx}">แตะกลุ่มคำด้านล่างเพื่อเรียงประโยค</span>`;
+      const hintText = (typeof I18N !== "undefined" && I18N.currentLang === "en") ? "Tap word chunks above to build sentence" : "แตะกลุ่มคำด้านบนเพื่อเรียงประโยค";
+      dropzone.innerHTML = `<span style="color:var(--text-muted); font-size:0.85rem;" id="dropzone_hint_${qIdx}">${hintText}</span>`;
     } else {
       dropzone.classList.add('has-tokens');
       dropzone.innerHTML = tokens.map((item, pIdx) => `

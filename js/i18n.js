@@ -21,8 +21,8 @@ const I18N = {
     hero_badge_series: { th: 'มัธยมศึกษาปีที่ 6 • ระดับ CEF: B1/B2', en: 'Grade 12 (M.6) • CEF: B1/B2 Level' },
     hero_badge_twp: { th: 'สำนักพิมพ์ไทยวัฒนาพานิช', en: 'Thai Watana Panich Publisher' },
     hero_title: {
-      th: 'บทอ่านเพื่อเสริมการเรียนรู้<br><span class="highlight-yellow">จากชุด Weaving It Together 3</span>',
-      en: 'Supplementary Reading<br><span class="highlight-yellow">from Weaving It Together 3</span>'
+      th: 'บทอ่านเพื่อเสริมการเรียนรู้<br><span class="highlight-yellow">จากชุด Weaving It Together</span>',
+      en: 'Supplementary Reading<br><span class="highlight-yellow">from Weaving It Together</span>'
     },
     hero_subtitle: { th: 'พัฒนาทักษะการอ่านเพื่อความเข้าใจและการจับใจความสำคัญ', en: 'Developing Reading Comprehension and Main Idea Skills' },
     hero_desc: {
@@ -72,7 +72,7 @@ const I18N = {
     inst_part_b_title: { th: 'Word Bank: Fill in the Blanks (เติมคำศัพท์ในช่องว่าง)', en: 'Word Bank: Fill in the Blanks' },
     inst_part_b_sub: { th: 'แตะเลือกคำศัพท์จากกล่องด้านบนเพื่อนำมาเติมลงในช่องว่างให้สมบูรณ์', en: 'Select words from the word bank above to complete each sentence' },
     inst_part_c_title: { th: 'Sentence Unscramble (เรียงคำเป็นประโยคที่ถูกต้อง)', en: 'Sentence Unscramble' },
-    inst_part_c_sub: { th: 'แตะกลุ่มคำด้านล่างเพื่อเรียงเป็นประโยคตามหลักไวยากรณ์และความหมาย', en: 'Tap the token chunks below to build the correct grammatical sentence' },
+    inst_part_c_sub: { th: 'แตะกลุ่มคำด้านบนเพื่อเรียงเป็นประโยคตามหลักไวยากรณ์และความหมาย', en: 'Tap the word chunks above to build the correct grammatical sentence' },
 
     // Action Buttons
     btn_check_answers: { th: 'ตรวจคำตอบ', en: 'Check Answers' },

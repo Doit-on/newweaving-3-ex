@@ -856,6 +856,31 @@ button {
   border-radius: var(--radius-sm);
 }
 
+/* Poem Mode (Unit 8: The Fox and the Grapes) */
+.passage-scroll-area.poem-mode {
+  padding: 24px 20px;
+}
+
+.passage-scroll-area .poem-couplet {
+  text-indent: 0;
+  margin-bottom: 16px;
+  line-height: 1.85;
+  padding: 12px 18px;
+  background: rgba(3, 105, 161, 0.04);
+  border-left: 4px solid var(--ocean-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-reading);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.passage-scroll-area .poem-couplet:hover {
+  background: rgba(3, 105, 161, 0.09);
+  transform: translateX(4px);
+}
+
 .para-badge {
   font-family: var(--font-main);
   font-size: 0.7rem;
